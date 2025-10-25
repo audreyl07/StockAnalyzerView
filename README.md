@@ -113,84 +113,34 @@ const response = await fetch(`http://your-api-url:port/${dataType}/${resultType}
 ```
 
 ## Project structure
-
-**Market breadth:**
-
-``` GET http://localhost:8080/market/single/MA_50_200src/
-
-```	
-App.js
-
-	ChartComponent.jsx
-
-**Expected Response Format:**	
-
-IndexComponent.jsx
-
-	ErrorBoundary.jsx
-
-Candlestick data (array):	index.html
-
-```json	index.js
-
-[	api/
-
-  {		chartApi.js
-
-    "time": 1698192000,	utils/
-
-    "open": 100.5,		closest-index.ts
-
-    "high": 102.3,		correlation-calculation.ts
-
-    "low": 99.8,		moving-average-calculation.ts
-
-    "close": 101.2,		timestamp-data.ts
-
-    "volume": 1234567		weighted-close-calculation.ts
-
-  }```
-
-]
-
+```
+StockAnalyzerView/
+├── .cache/                     # Parcel build cache (generated)
+├── .git/                       # Git repository metadata
+├── dist/                       # Production build output (generated)
+├── node_modules/               # NPM dependencies (generated)
+├── src/                        # Source code directory
+│   ├── api/
+│   │   └── chartApi.js         # API fetch wrapper for backend communication
+│   ├── utils/
+│   │   ├── closest-index.ts           # Binary search helper for time-based lookups
+│   │   ├── correlation-calculation.ts # Rolling Pearson correlation calculator
+│   │   ├── moving-average-calculation.ts  # SMA/EMA/WMA indicator calculations
+│   │   ├── timestamp-data.ts          # Timestamp validation utility
+│   │   └── weighted-close-calculation.ts  # Weighted close price calculator
+│   ├── App.js                  # Main application component with tab navigation
+│   ├── ChartComponent.jsx      # Stock chart component (candlestick/line)
+│   ├── ErrorBoundary.jsx       # Error boundary wrapper with retry functionality
+│   ├── index.html              # HTML entry point
+│   ├── index.js                # React application initialization
+│   └── IndexComponent.jsx      # Index chart component with breadth indicator
+├── .gitignore                  # Git ignore rules
+├── LICENSE                     # MIT license file
+├── package.json                # NPM dependencies and scripts
+└── README.md                   # Project documentation (this file)
 ```
 
-## Customization tips
-
-Line data (array):- Default symbol is `TSLA`; change via the input on the Stock Chart tab (press Enter) or pass `symbol` to `ChartComponent`.
-
-`json- To switch chart type for stocks, pass `type="line" | "candlestick"` to `ChartComponent`.
-
-[
-- Colors can be customized by passing a `colors` object to components.
-
-  {- API base URL is currently hardcoded to `http://localhost:8080`; consider promoting this to an environment variable for flexibility.
-
-    "time": 1698192000,
-
-    "value": 0.75## Troubleshooting
-
-  }
-
-]
-- Blank chart or errors: ensure the backend is running and returning valid JSON in the expected shapes.
-
-- Incorrect timestamps: lightweight-charts expects seconds since epoch (UTC). If you send milliseconds, divide by 1000.
-
-- Volume missing: if `volume` isn’t present on bars, the volume histogram will be empty.
-
-**Important Notes:**- Parcel build issues: delete `.cache` and `dist`, then rerun `npm start`.
-
-- `time` must be a Unix timestamp in **seconds** (UTC)
-
-- `volume` is optional but recommended## License
-
-- MA(50)/MA(200) breadth should be a decimal ratio (e.g., 0.75 = 75%)
-
-MIT – see `LICENSE` for details.
-
 ### Customizing Chart Appearance
-
 
 **Change default stock symbol:**
 
@@ -234,70 +184,7 @@ const movingAverages = [
 
 Modify `length` and `color` values as needed.
 
-## Project Structure
-
-```
-StockAnalyzerView/
-├── .cache/                     # Parcel build cache (generated)
-├── .git/                       # Git repository metadata
-├── dist/                       # Production build output (generated)
-├── node_modules/               # NPM dependencies (generated)
-├── src/                        # Source code directory
-│   ├── api/
-│   │   └── chartApi.js         # API fetch wrapper for backend communication
-│   ├── utils/
-│   │   ├── closest-index.ts           # Binary search helper for time-based lookups
-│   │   ├── correlation-calculation.ts # Rolling Pearson correlation calculator
-│   │   ├── moving-average-calculation.ts  # SMA/EMA/WMA indicator calculations
-│   │   ├── timestamp-data.ts          # Timestamp validation utility
-│   │   └── weighted-close-calculation.ts  # Weighted close price calculator
-│   ├── App.js                  # Main application component with tab navigation
-│   ├── ChartComponent.jsx      # Stock chart component (candlestick/line)
-│   ├── ErrorBoundary.jsx       # Error boundary wrapper with retry functionality
-│   ├── index.html              # HTML entry point
-│   ├── index.js                # React application initialization
-│   └── IndexComponent.jsx      # Index chart component with breadth indicator
-├── .gitignore                  # Git ignore rules
-├── LICENSE                     # MIT license file
-├── package.json                # NPM dependencies and scripts
-└── README.md                   # Project documentation (this file)
-```
-
-### File Descriptions
-
-**Root Level:**
-- `.cache/` - Parcel bundler cache (auto-generated, gitignored)
-- `.git/` - Git version control metadata
-- `dist/` - Production build output directory (auto-generated)
-- `node_modules/` - Installed NPM packages (auto-generated)
-- `.gitignore` - Specifies files/folders to exclude from Git
-- `LICENSE` - MIT license terms
-- `package.json` - Project metadata, dependencies, and npm scripts
-- `README.md` - This documentation file
-
-**Source Directory (`src/`):**
-- `index.html` - HTML template with root div for React mounting
-- `index.js` - Entry point that renders the App component
-- `App.js` - Main layout with tabs (Indices/Stock Chart) and symbol input
-- `ChartComponent.jsx` - Renders individual stock charts with MA overlays and volume
-- `IndexComponent.jsx` - Renders market index charts with breadth indicators
-- `ErrorBoundary.jsx` - Catches and displays React errors gracefully
-
-**API Directory (`src/api/`):**
-- `chartApi.js` - Fetches chart data from backend API at localhost:8080
-
-**Utilities Directory (`src/utils/`):**
-- `closest-index.ts` - Binary search with caching for finding closest time indices
-- `correlation-calculation.ts` - Calculates rolling Pearson correlation between series
-- `moving-average-calculation.ts` - Configurable MA calculations (SMA/EMA/WMA)
-- `timestamp-data.ts` - Validates time properties are numeric UTC timestamps
-- `weighted-close-calculation.ts` - Computes weighted close: (close*weight + high + low) / (2+weight)
-```
-
 ## Testing
-
-Currently, no automated tests are configured. The project uses manual testing:
-
 1. **Start the backend API** serving data at `http://localhost:8080`
 2. **Run the development server:**
    ```powershell
@@ -351,13 +238,6 @@ Currently, no automated tests are configured. The project uses manual testing:
 - API base URL is hardcoded (consider environment variables for production)
 - No automated tests
 - Backend must be running locally
-
-**Future Enhancements:**
-- Add environment variable support for API URL
-- Implement automated testing (Jest, React Testing Library)
-- Add more technical indicators (RSI, MACD, Bollinger Bands)
-- Persist user preferences (selected index, stock symbols)
-- Add dark/light theme toggle
 
 ---
 
