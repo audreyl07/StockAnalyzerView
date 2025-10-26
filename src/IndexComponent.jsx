@@ -1,3 +1,26 @@
+/**
+ * IndexComponent.jsx - Market Index Chart Component
+ * 
+ * Renders interactive candlestick charts for major market indices (S&P 500, Nasdaq 100, Dow Jones)
+ * with additional market breadth indicators.
+ * 
+ * Features:
+ * - Candlestick chart for index price action
+ * - 20/50/200-day simple moving averages overlaid on price
+ * - Volume histogram with 20-day MA (separate pane)
+ * - MA(50)/MA(200) breadth ratio indicator (bottom pane, percent scale)
+ * - Responsive design with automatic resizing
+ * - Loading and error states
+ * 
+ * Props:
+ * @param {string} index - Index symbol: 'SPX', 'NDX', or 'DJI' (default: 'SPX')
+ * @param {object} colors - Optional color customization object
+ * 
+ * Market Breadth Indicator:
+ * Shows the ratio of stocks above their 50-day MA vs 200-day MA
+ * Higher values indicate broader market participation in the uptrend
+ */
+
 import { createChart, ColorType, LineSeries, CandlestickSeries, HistogramSeries } from 'lightweight-charts';
 import React, { useEffect, useRef, useState } from 'react';
 import { fetchChartData } from './api/chartApi';

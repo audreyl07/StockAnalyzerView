@@ -1,3 +1,29 @@
+/**
+ * correlation-calculation.ts - Rolling Correlation Indicator
+ * 
+ * Calculates the Pearson correlation coefficient between two time series over a rolling window.
+ * Useful for measuring the strength and direction of relationships between assets.
+ * 
+ * Features:
+ * - Rolling window correlation (configurable period)
+ * - Automatic time alignment using binary search
+ * - Handles mismatched timestamps
+ * - Compatible with lightweight-charts data
+ * - Supports candlestick and line data
+ * 
+ * Correlation Values:
+ * - +1.0: Perfect positive correlation (move together)
+ * - 0.0: No correlation (independent movement)
+ * - -1.0: Perfect negative correlation (move opposite)
+ * 
+ * Use Cases:
+ * - Pair trading strategies
+ * - Portfolio diversification analysis
+ * - Market sector rotation detection
+ * - Risk management (correlation with indices)
+ * - Asset allocation decisions
+ */
+
 import {
 	CandlestickData,
 	LineData,

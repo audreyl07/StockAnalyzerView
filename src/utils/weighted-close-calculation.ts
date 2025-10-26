@@ -1,3 +1,30 @@
+/**
+ * weighted-close-calculation.ts - Weighted Close Price Indicator
+ * 
+ * Calculates the weighted close price, giving more emphasis to the closing price
+ * while still considering the high and low of the period.
+ * 
+ * Formula: (Close × Weight + High + Low) / (Weight + 2)
+ * Default Weight: 2
+ * 
+ * Rationale:
+ * - Close price is most significant (where the period ended)
+ * - High and low provide context about the range
+ * - Weighted close smooths out noise while preserving trends
+ * 
+ * Features:
+ * - Configurable weight for close price
+ * - Optional time offset (shift forward/backward)
+ * - Handles missing data gracefully
+ * - Compatible with lightweight-charts
+ * 
+ * Use Cases:
+ * - Alternative to simple close price
+ * - Input for other indicators (MA, momentum)
+ * - More stable than close alone
+ * - Reduces impact of end-of-day manipulation
+ */
+
 import {
 	CandlestickData,
 	LineData,

@@ -1,3 +1,24 @@
+/**
+ * App.js - Main Application Component
+ * 
+ * This is the root component of the StockAnalyzerView application.
+ * It provides a tabbed interface for viewing:
+ * 1. Market Indices (S&P 500, Nasdaq 100, Dow Jones)
+ * 2. Individual Stock Charts
+ * 
+ * Features:
+ * - Tab navigation between Indices and Stock Chart views
+ * - Dynamic stock symbol input (visible only on Stock Chart tab)
+ * - Toggle buttons for index selection (SPX, NDX, DJI)
+ * - Real-time chart updates based on user input
+ * 
+ * State Management:
+ * - activeTab: Controls which tab is currently displayed (0 = Indices, 1 = Stock Chart)
+ * - symbol: The active stock symbol to display (updates trigger chart refresh)
+ * - inputSymbol: Temporary state for the text input (only updates symbol on Enter key)
+ * - indexSymbol: The selected market index (SPX, NDX, or DJI)
+ */
+
 import React, { useState } from 'react';
 import { ChartComponent } from './ChartComponent';
 import { IndexComponent } from './IndexComponent';

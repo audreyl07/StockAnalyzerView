@@ -1,3 +1,22 @@
+/**
+ * ChartComponent.jsx - Individual Stock Chart Component
+ * 
+ * Renders interactive candlestick or line charts for individual stocks using TradingView's lightweight-charts.
+ * 
+ * Features:
+ * - Candlestick or line chart display
+ * - 20/50/200-day simple moving averages overlaid on price chart
+ * - Volume histogram in a separate pane with color-coded bars (green=up, red=down)
+ * - 20-day moving average of volume
+ * - Responsive design with automatic resizing
+ * - Loading and error states
+ * 
+ * Props:
+ * @param {string} symbol - Stock ticker symbol (default: 'TSLA')
+ * @param {string} type - Chart type: 'candlestick' or 'line' (default: 'line')
+ * @param {object} colors - Optional color customization object
+ */
+
 import { createChart, ColorType, LineSeries, CandlestickSeries, HistogramSeries } from 'lightweight-charts';
 import React, { useEffect, useRef, useState } from 'react';
 import { fetchChartData } from './api/chartApi';

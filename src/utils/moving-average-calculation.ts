@@ -1,3 +1,28 @@
+/**
+ * moving-average-calculation.ts - Technical Analysis Indicators
+ * 
+ * Provides comprehensive moving average calculations for financial time series data.
+ * Compatible with lightweight-charts data formats.
+ * 
+ * Supported Moving Average Types:
+ * - SMA (Simple Moving Average) - Unweighted mean of previous n periods
+ * - EMA (Exponential Moving Average) - Weighted average giving more weight to recent prices
+ * - WMA (Weighted Moving Average) - Linear weighted average
+ * 
+ * Advanced Features:
+ * - Configurable lookback period (length)
+ * - Time offset (shift MA forward/backward)
+ * - Smoothing line (apply additional MA to the result)
+ * - Automatic source detection (close/value)
+ * - Handles missing data gracefully
+ * 
+ * Use Cases:
+ * - Trend identification (20/50/200-day MAs)
+ * - Support/resistance levels
+ * - Crossover trading signals
+ * - Volatility measurement
+ */
+
 import {
 	CandlestickData,
 	LineData,
