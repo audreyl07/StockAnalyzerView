@@ -2,10 +2,9 @@
 
 An interactive stock and index chart built with React, Parcel and TradingView's lightweight-charts. It features candlestick charts with 50/200 day moving averages, volume histograms with 20-day averages and market indicators for major indices. Switch stock symbols with a simple input to look at different markets. 
 
-**Tech Stack:** React 19, Material UI 7, lightweight-charts 5, Parcel Bundler 1, TypeScript
 ## Features
 
-## Installation- Indices tab (S&P 500, Nasdaq 100, Dow Jones) with:
+### Installation- Indices tab (S&P 500, Nasdaq 100, Dow Jones) with:
 
 	- Candlestick chart
 
@@ -94,7 +93,7 @@ Install dependencies and start the dev server:
 
 ## Configuration
 
-### API Endpoint Configuration	- `{ time, open, high, low, close, volume? }`
+### API Endpoint Configuration
 
 - Line point (indicators/breadth):
 
@@ -108,36 +107,38 @@ The application fetches data from `http://localhost:8080`. To change this:	- `{ 
 
 ```javascript- Volume is optional; if provided, it enables the volume histogram.
 
-const response = await fetch(`http://your-api-url:port/${dataType}/${resultType}/${symbol}`);- The MA(50)/MA(200) breadth series is expected as a decimal ratio (e.g., 0.75 for 75%) and is rendered on a percent scale.
-
+const response = await fetch(`http://your-api-url:port/${dataType}/${resultType}/${symbol}`);
 ```
+
+- The MA(50)/MA(200) breadth series is expected as a decimal ratio (e.g., 0.75 for 75%) and is rendered on a percent scale.
+
 
 ## Project structure
 ```
 StockAnalyzerView/
-├── .cache/                     # Parcel build cache (generated)
-├── .git/                       # Git repository metadata
-├── dist/                       # Production build output (generated)
+├── .cache/                     
+├── .git/                       
+├── dist/                       
 ├── node_modules/               # NPM dependencies (generated)
 ├── src/                        # Source code directory
 │   ├── api/
-│   │   └── chartApi.js         # API fetch wrapper for backend communication
+│   │   └── chartApi.js         # API fetch wrapper
 │   ├── utils/
-│   │   ├── closest-index.ts           # Binary search helper for time-based lookups
-│   │   ├── correlation-calculation.ts # Rolling Pearson correlation calculator
-│   │   ├── moving-average-calculation.ts  # SMA/EMA/WMA indicator calculations
-│   │   ├── timestamp-data.ts          # Timestamp validation utility
-│   │   └── weighted-close-calculation.ts  # Weighted close price calculator
-│   ├── App.js                  # Main application component with tab navigation
-│   ├── ChartComponent.jsx      # Stock chart component (candlestick/line)
-│   ├── ErrorBoundary.jsx       # Error boundary wrapper with retry functionality
-│   ├── index.html              # HTML entry point
-│   ├── index.js                # React application initialization
-│   └── IndexComponent.jsx      # Index chart component with breadth indicator
-├── .gitignore                  # Git ignore rules
-├── LICENSE                     # MIT license file
-├── package.json                # NPM dependencies and scripts
-└── README.md                   # Project documentation (this file)
+│   │   ├── closest-index.ts           
+│   │   ├── correlation-calculation.ts 
+│   │   ├── moving-average-calculation.ts  
+│   │   ├── timestamp-data.ts         
+│   │   └── weighted-close-calculation.ts  
+│   ├── App.js                  
+│   ├── ChartComponent.jsx      
+│   ├── ErrorBoundary.jsx       
+│   ├── index.html              
+│   ├── index.js                
+│   └── IndexComponent.jsx      
+├── .gitignore                  
+├── LICENSE                     
+├── package.json                
+└── README.md                   
 ```
 
 ### Customizing Chart Appearance
