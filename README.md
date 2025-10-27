@@ -50,7 +50,12 @@ An interactive stock and index chart built with React and TradingView's lightwei
 npm install
 
 ```
-- React 19 + ReactDOM 19
+- React 19 
+- ReactDOM 19
+- lightweight-charts 
+- mui/material
+- emotion/react 
+- emotion/styled 
 
 ## Quick start
 Run the following command: 
