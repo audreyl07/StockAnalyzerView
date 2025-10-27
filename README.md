@@ -1,4 +1,4 @@
-An interactive stock and index chart built with React and TradingView's lightweight-charts. It features candlestick charts with MA(50)/MA(200) day breath ratio, volume histograms with 20-day averages and market indicators for major indices. A simple input to switch to different stocks
+An interactive stock and index chart built with React and TradingView's lightweight-charts. It features candlestick charts with MA(50)>MA(200) breath ratio, volume histograms with 20-day averages and market indicators for major indices. A simple input to switch to different stocks
 
 ## Overall Architecture
 <p align="center">
@@ -9,8 +9,9 @@ An interactive stock and index chart built with React and TradingView's lightwei
 
 <div align="center">
    <img src="assets/StockChart.jpg" alt="Stock chart view with moving averages and volume" width="100%" />
+   <em>The index view includes the MA(50)/MA(200) market breadth ratio, displayed on a percent scale in the lower pane.</em>
+
    <img src="assets/IndexChart.jpg" alt="Index chart view with breadth indicator" width="100%" />
-  
 </div>
 
 ## Installation 
