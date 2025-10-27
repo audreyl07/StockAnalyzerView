@@ -1,7 +1,8 @@
 # StockAnalyzerView
 
-An interactive stock and index chart built with React, Parcel and TradingView's lightweight-charts. It features candlestick charts with 50/200 day moving averages, volume histograms with 20-day averages and market indicators for major indices. Switch stock symbols with a simple input to look at different markets. 
+An interactive stock and index chart built with React and TradingView's lightweight-charts. It features candlestick charts with 50/200 day moving averages, volume histograms with 20-day averages and market indicators for major indices. A simple input to switch to different stocks
 
+## Overall Architecture 
 <p align="center">
    <img src="assets/DataController.jpg" alt="StockAnalyzerView application screenshot" width="800" />
 </p>
