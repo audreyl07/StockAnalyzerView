@@ -10,11 +10,6 @@ An interactive stock and index chart built with React and TradingView's lightwei
 <p align="center"><em>StockAnalyzerView – interactive charts with moving averages and volume.</em></p>
 
 ## Features
-
-### Installation- Indices tab (S&P 500, Nasdaq 100, Dow Jones) with:
-
-	- Candlestick chart
-
 **Prerequisites:**	- 50/200-day moving average overlays
 
 - Node.js (LTS version recommended)	- Volume histogram + 20-day volume MA (separate pane)
@@ -41,16 +36,6 @@ npm install
 
 - React 19 + ReactDOM 19
 
-4. Start the development server:- Material UI 7 (@mui/material)
-
-- lightweight-charts 5
-
-```powershell- Parcel Bundler 1
-
-npm start- TypeScript (for utility modules)
-
-```
-
 ## Quick start
 
 Parcel will automatically open the application in your browser at `http://localhost:1234` (or another available port).
@@ -58,7 +43,6 @@ Parcel will automatically open the application in your browser at `http://localh
 Prerequisites:
 
 **Note:** The application expects a backend API running at `http://localhost:8080`. Ensure your backend is running before starting the frontend.
-
 
 ## Usage
 
