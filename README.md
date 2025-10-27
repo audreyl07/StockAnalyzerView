@@ -121,6 +121,12 @@ StockAnalyzerView/
 ├── dist/                       
 ├── node_modules/               # NPM dependencies (generated)
 ├── src/                        # Source code directory
+│   ├── __tests__/              # Unit test suite
+│   │   ├── App.test.jsx               
+│   │   ├── ChartComponent.test.jsx      
+│   │   ├── ErrorBoundary.test.jsx    
+│   │   ├── index.html.test.js          
+│   │   └── IndexComponent.test.jsx        
 │   ├── api/
 │   │   └── chartApi.js         # API fetch wrapper
 │   ├── utils/
@@ -135,6 +141,8 @@ StockAnalyzerView/
 │   ├── index.html              
 │   ├── index.js                
 │   └── IndexComponent.jsx      
+├── test/
+│   └── setupTests.js           
 ├── .gitignore                  
 ├── LICENSE                     
 ├── package.json                
@@ -237,8 +245,84 @@ Modify `length` and `color` values as needed.
 
 **Known Limitations:**
 - API base URL is hardcoded (consider environment variables for production)
-- No automated tests
+- No automated end-to-end tests
 - Backend must be running locally
+
+## Further Enhancements
+### Feature Enhancements
+
+1. **Additional Technical Indicators**
+   - RSI (Relative Strength Index)
+   - MACD (Moving Average Convergence Divergence)
+   - Bollinger Bands
+   - Stochastic Oscillator
+   - Fibonacci retracements
+
+2. **Timeframe Selection**
+   - Add buttons for common timeframes (1D, 1W, 1M, 3M, 1Y, All)
+   - Support custom date range selection with calendar picker
+
+3. **Comparison Mode**
+   - Overlay multiple stocks on a single chart
+   - Percentage-based comparison from a common starting point
+   - Compare stock performance against major indices
+
+4. **Drawing Tools**
+   - Trend lines and channels
+   - Annotations and text labels
+   - Measurements and retracement tools
+
+5. **Alerts & Notifications**
+   - Price alerts (above/below target)
+   - Technical indicator alerts (RSI overbought/oversold)
+   - Volume spike notifications
+   - Browser notifications API integration
+
+6. **Watchlist & Portfolio**
+   - Create and manage multiple watchlists
+   - Track portfolio holdings with P&L calculations
+   - Sort and filter by various metrics (% change, volume, etc.)
+
+### Testing & Quality Assurance
+
+1. **Visual Regression Testing**
+   - Use tools like Percy or Chromatic to catch UI regressions
+   - Capture screenshots of charts in different states
+   - Test responsive layouts across viewport sizes
+
+2. **Performance Testing**
+   - Measure chart rendering performance with large datasets
+   - Profile React component re-renders
+   - Test memory usage with lighthouse-charts over extended periods
+
+### Architecture & Performance
+
+1. **Real-Time Data**
+   - Implement WebSocket connection for live price updates
+   - Auto-refresh charts without full page reload
+   - Show real-time volume and last trade information
+
+2. **Chart Performance**
+   - Implement data decimation for large datasets
+   - Use web workers for heavy calculations (indicators)
+   - Optimize moving average calculations with incremental updates
+
+### User Experience
+
+1. **Dark Mode / Themes**
+   - Toggle between light and dark themes
+   - Custom color scheme editor
+   - Save theme preferences to localStorage
+
+2. **Customizable Layouts**
+   - Drag-and-drop panel arrangement
+   - Save and load custom layouts
+   - Multiple workspace tabs
+
+3. **Export Capabilities**
+   - Export charts as PNG/SVG images
+   - Download historical data as CSV
+   - Share chart snapshots with unique URLs
 
 ---
 
