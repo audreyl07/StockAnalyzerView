@@ -1,24 +1,17 @@
-# StockAnalyzerView
+An interactive stock and index chart built with React and TradingView's lightweight-charts. It features candlestick charts with MA(50)/MA(200) day breath ratio, volume histograms with 20-day averages and market indicators for major indices. A simple input to switch to different stocks
 
-An interactive stock and index chart built with React and TradingView's lightweight-charts. It features candlestick charts with 50/200 day moving averages, volume histograms with 20-day averages and market indicators for major indices. A simple input to switch to different stocks
-
-## Overall Architecture 
+## Overall Architecture
 <p align="center">
    <img src="assets/DataController.jpg" alt="StockAnalyzerView application screenshot" width="800" />
 </p>
 
-<p align="center"><em>StockAnalyzerView – interactive charts with moving averages and volume.</em></p>
 
 ## Features
-**Prerequisites:**	- 50/200-day moving average overlays
 
-- Node.js (LTS version recommended)	- Volume histogram + 20-day volume MA (separate pane)
-
-	- Market series: MA(50)/MA(200) breadth ratio in a separate pane (percent scale)
-
-**Steps:**- Stock Chart tab with:
-
-	- Candlestick chart for a chosen symbol (default: TSLA)
+<p align="center">  
+   <img src="assets/IndexChart.jpg" alt="Index chart view with breadth indicator" width="49%" />
+   <img src="assets/StockChart.jpg" alt="Stock chart view with moving averages and volume" width="49%" />
+</p>
 
 1. Clone or download this repository
 
@@ -33,14 +26,17 @@ An interactive stock and index chart built with React and TradingView's lightwei
 npm install
 
 ```
-
 - React 19 + ReactDOM 19
 
 ## Quick start
+Run the following command: 
+```powershell
 
+npm start 
+
+```
 Parcel will automatically open the application in your browser at `http://localhost:1234` (or another available port).
 
-Prerequisites:
 
 **Note:** The application expects a backend API running at `http://localhost:8080`. Ensure your backend is running before starting the frontend.
 
