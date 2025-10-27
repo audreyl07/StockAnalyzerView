@@ -5,14 +5,26 @@ An interactive stock and index chart built with React and TradingView's lightwei
    <img src="assets/DataController.jpg" alt="StockAnalyzerView application screenshot" width="800" />
 </p>
 
-
 ## Features
 
-<p align="center">  
-   <img src="assets/IndexChart.jpg" alt="Index chart view with breadth indicator" width="100%" />
+<div align="center">
    <img src="assets/StockChart.jpg" alt="Stock chart view with moving averages and volume" width="100%" />
-</p>
+   <img src="assets/IndexChart.jpg" alt="Index chart view with breadth indicator" width="100%" />
+  
+</div>
 
+## Installation 
+### Requirements
+
+- Node.js 18+ (LTS recommended)
+- npm (comes with Node.js)
+- lightweight-charts
+- react-dom 
+- Modern browser (Chrome, Edge, or Firefox latest)
+- Backend API reachable at http://localhost:8080
+   - Endpoints expected by the app: `/stock/*`, `/index/*`, and `/market/*`
+
+### Installation Steps
 1. Clone or download this repository
 
 2. Navigate to the project directory
