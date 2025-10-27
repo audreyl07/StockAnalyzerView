@@ -7,18 +7,29 @@ An interactive stock and index chart built with React and TradingView's lightwei
 
 ## Features
 
-<div align="center">
-   <img src="assets/StockChart.jpg" alt="Stock chart view with moving averages and volume" width="100%" />
-   <em>The index view includes the MA(50)/MA(200) market breadth ratio, displayed on a percent scale in the lower pane.</em>
-
+<div align="center">   
    <img src="assets/IndexChart.jpg" alt="Index chart view with breadth indicator" width="100%" />
+   <em>The index view includes the MA(50)>MA(200) market breadth ratio, displayed on a percent scale in the lower pane.</em>
+   <img src="assets/StockChart.jpg" alt="Stock chart view with moving averages and volume" width="100%" />
+    <em>The stock view includes the MA(50), MA(200) in the main pane.</em>
 </div>
+
+### Available Chart Features
+
+- **Zoom:** Scroll mouse wheel or pinch on touchpad
+
+- **Pan:** Click and drag on the chart```
+
+- **Reset view:** Double-click the chart
+
+- **Crosshair:** Hover over the chart to see precise valuesUsed combinations:
 
 ## Installation 
 ### Requirements
 
 - Node.js 18+ (LTS recommended)
 - npm (comes with Node.js)
+- material-ui
 - lightweight-charts
 - react-dom 
 - Modern browser (Chrome, Edge, or Firefox latest)
@@ -52,44 +63,6 @@ Parcel will automatically open the application in your browser at `http://localh
 
 
 **Note:** The application expects a backend API running at `http://localhost:8080`. Ensure your backend is running before starting the frontend.
-
-## Usage
-
-Install dependencies and start the dev server:
-
-### Viewing Market Indices
-
-1. Open the application (default tab is **Indices**)npm install
-
-2. Select an index using the toggle buttons:npm start
-
-   - **S&P 500** (SPX)```
-
-   - **Nasdaq 100** (NDX)
-
-   - **Dow Jones** (DJI)
-
-3. View the candlestick chart with:
-
-   - 50/200-day moving averages (orange/green/pink lines)
-
-   - Volume histogram with 20-day moving average (lower pane)
-
-   - MA(50)/MA(200) breadth ratio (bottom pane, percent scale)- `npm start` – Run dev server (Parcel) for `src/index.html`
-
-- `npm run build` – Production build to `dist/`
-
-
-### Available Chart Features
-
-- **Zoom:** Scroll mouse wheel or pinch on touchpad
-
-- **Pan:** Click and drag on the chart```
-
-- **Reset view:** Double-click the chart
-
-- **Crosshair:** Hover over the chart to see precise valuesUsed combinations:
-
 
 ## Configuration
 
