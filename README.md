@@ -9,8 +9,8 @@ An interactive stock and index chart built with React and TradingView's lightwei
 ## Features
 
 <p align="center">  
-   <img src="assets/IndexChart.jpg" alt="Index chart view with breadth indicator" width="49%" />
-   <img src="assets/StockChart.jpg" alt="Stock chart view with moving averages and volume" width="49%" />
+   <img src="assets/IndexChart.jpg" alt="Index chart view with breadth indicator" width="100%" />
+   <img src="assets/StockChart.jpg" alt="Stock chart view with moving averages and volume" width="100%" />
 </p>
 
 1. Clone or download this repository
